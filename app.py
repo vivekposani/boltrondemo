@@ -172,9 +172,7 @@ with filter_cols[1]:
     selected_failure_source = st.selectbox("Failure Source", options=failure_sources, index=0)
 with filter_cols[2]:
     selected_retry_threshold = st.selectbox("Retry Threshold", options=[1, 2, 3, 4, 5], index=2)
-with filter_cols[3]:
-    if st.button("Reset View"):
-        st.rerun()
+
 
 filtered = df.copy()
 if selected_run_cycle != "ALL":
@@ -203,6 +201,7 @@ metric_html = [
     build_metric_card("NFMS Push Failures", f"{nfms_push_failures:,}", "Downstream NFMS push failures below threshold", "#B28CFF"),
     build_metric_card("Deviated List (> retries)", f"{deviated_list:,}", "Persistent failures requiring manual action", "#4DB8FF"),
 ]
+st.markdown('<div class="hero-title"></div>', unsafe_allow_html=True)
 for col, html in zip(metric_cols, metric_html):
     with col:
         st.markdown(html, unsafe_allow_html=True)
