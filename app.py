@@ -153,7 +153,7 @@ def build_insight(df: pd.DataFrame, retry_threshold: int) -> str:
 st.markdown('<div class="hero-title">BizFlow Integration Monitoring Dashboard</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">MDM → NFMS | Block Load Profile | Static CSV build for Streamlit Community Cloud</div>', unsafe_allow_html=True)
 
-uploaded_file = st.file_uploader("Optional: replace the bundled dataset with your own CSV", type=["csv"])
+
 df = load_csv_data(uploaded_file if uploaded_file is not None else DEFAULT_CSV)
 
 required_columns = {"run_cycle","final_failure_source","retry_count","final_status","mdm_failure_category","final_message","device_id","updated_ts","deviated_flag"}
