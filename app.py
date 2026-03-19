@@ -252,3 +252,14 @@ with row3_right:
     st.markdown('<div class="panel-card"><div style="display:flex;justify-content:space-between;align-items:center;"><div class="section-title">Insight</div><div class="pill" style="background:#13593C55;color:#7CE1A7;border-color:#7CE1A755;">Automation Health</div></div>', unsafe_allow_html=True)
     st.markdown(build_insight(filtered, selected_retry_threshold), unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
+
+#----------------------Hide Streamlit footer----------------------------
+hide_st_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+#--------------------------------------------------------------------
