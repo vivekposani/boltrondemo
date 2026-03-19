@@ -149,7 +149,7 @@ def build_insight(df: pd.DataFrame, retry_threshold: int) -> str:
         of <b>{retry_threshold}</b> and should remain in the operator queue until root cause closure.
     </div>
     """
-
+st.markdown('<div class="hero-title"></div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-title">BizFlow Integration Monitoring Dashboard</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">MDM → NFMS | Block Load Profile </div>', unsafe_allow_html=True)
 
